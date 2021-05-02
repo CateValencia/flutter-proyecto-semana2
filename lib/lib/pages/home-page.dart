@@ -12,9 +12,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  double _estatura = 150;
-  int peso = 50;
-  int edad = 18;
+  double _estatura = 166;
+  int peso = 62;
+  int edad = 38;
   bool genero = false;
   String sexo = "";
   int codeColorFemenino = 0xFF3B3B3B;

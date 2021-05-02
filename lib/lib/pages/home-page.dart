@@ -60,7 +60,7 @@ void _aumentaEdad() {
                 height: 160,
                 width: 160,
                 decoration: BoxDecoration(
-                  color: const Color(0xFF212122),
+                  color: const Color(0xFF1c1d32),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Column(
@@ -74,7 +74,7 @@ void _aumentaEdad() {
                 height: 160,
                 width: 160,
                 decoration: BoxDecoration(
-                  color: const Color(0xFF212122),
+                  color: const Color(0xFF1c1d32),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Column(
@@ -92,7 +92,7 @@ void _aumentaEdad() {
           child: Expanded(
               child: Container(
                   decoration: BoxDecoration(
-                    color: const Color(0xFF212122),
+                    color: const Color(0xFF1c1d32),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   height: 160,

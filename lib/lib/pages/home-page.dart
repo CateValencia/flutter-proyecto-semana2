@@ -120,7 +120,30 @@ double _estatura = 166;
                               )
                       ]))),
             ),
-      ],
+
+      
+
+      Padding(
+          padding: const EdgeInsets.all(0.0),
+          child: Container(
+              height: 80,
+              color: Colors.pinkAccent[400],
+              child: Column(children: [
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(18.0),
+                        child: Text(
+                          "Calcular",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 30),
+                        ),
+                      ),
+                    ])
+              ])),
+        ),
+      ]
     );
   }
 }

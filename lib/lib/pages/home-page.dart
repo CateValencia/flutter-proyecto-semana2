@@ -11,9 +11,33 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
- 
+double _estatura = 150;
+int peso = 50;
+int edad = 18;  
 
-double _estatura = 166;  
+void _aumentaEdad() {
+    setState(() {
+      edad++;
+    });
+  }
+
+  void _disminuyeEdad() {
+    setState(() {
+      edad--;
+    });
+  }
+
+  void _disminuyePeso() {
+    setState(() {
+      peso--;
+    });
+  }
+
+  void _aumentaPeso() {
+    setState(() {
+      peso++;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -120,7 +144,109 @@ double _estatura = 166;
                               )
                       ]))),
             ),
-
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Container(
+                margin: EdgeInsets.symmetric(vertical: 20),
+                height: 170,
+                width: 170,
+                decoration: BoxDecoration(
+                  color: const Color(0xFF1c1d32),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 12),
+                  child: Column(children: [
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Text(
+                            "Peso",
+                            style:
+                                TextStyle(color: Colors.white30, fontSize: 20),
+                          )
+                        ]),
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Text(
+                            peso.toString(),
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 50),
+                          )
+                        ]),
+                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 6),
+                        child: FloatingActionButton(
+                          onPressed: _disminuyePeso,
+                          child:
+                              Icon(Icons.remove, color: Colors.white, size: 32),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 6),
+                        child: FloatingActionButton(
+                          onPressed: _aumentaPeso,
+                          child: Icon(Icons.add, color: Colors.white, size: 32),
+                        ),
+                      )
+                    ])
+                  ]),
+                )),
+            Container(
+                margin: EdgeInsets.symmetric(vertical: 20),
+                height: 170,
+                width: 170,
+                decoration: BoxDecoration(
+                  color: const Color(0xFF1c1d32),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 12),
+                  child: Column(children: [
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Text(
+                            "Edad",
+                            style:
+                                TextStyle(color: Colors.white30, fontSize: 20),
+                          )
+                        ]),
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Text(
+                            edad.toString(),
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 50),
+                          )
+                        ]),
+                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 6),
+                        child: FloatingActionButton(
+                          onPressed: _disminuyeEdad,
+                          child:
+                              Icon(Icons.remove, color: Colors.white, size: 32),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 6),
+                        child: FloatingActionButton(
+                          onPressed: _aumentaEdad,
+                          child: Icon(Icons.add, color: Colors.white, size: 32),
+                        ),
+                      )
+                    ])
+                  ]),
+                )),
+          ],
+        ),
+    
+      
       
 
       Padding(
@@ -147,3 +273,5 @@ double _estatura = 166;
     );
   }
 }
+
+

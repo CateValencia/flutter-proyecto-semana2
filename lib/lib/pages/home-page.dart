@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'resultados.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -87,6 +88,13 @@ void _aumentaEdad() {
     setState(() {
       peso++;
     });
+  }
+
+
+dynamic getResultado() {
+  var resultado;
+  
+    return resultado;
   }
 
   @override
@@ -308,11 +316,21 @@ void _aumentaEdad() {
 
       Padding(
           padding: const EdgeInsets.all(0.0),
-          child: Container(
+          child: GestureDetector(
+            onTap: () {
+              setState(() {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            ResultadosPage()));
+              });
+            },
+           child: Container(
               height: 80,
               color: Colors.pinkAccent[400],
               child: Column(children: [
-                Row(
+                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Padding(
@@ -325,6 +343,7 @@ void _aumentaEdad() {
                       ),
                     ])
               ])),
+          ),    
         ),
       ]
     );

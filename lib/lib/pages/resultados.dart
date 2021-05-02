@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'home-page.dart';
 
 class ResultadosPage extends StatelessWidget {
-    var resultado;
+  var resultado;
 
-
- ResultadosPage();
+  ResultadosPage({required this.resultado});
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +16,7 @@ class ResultadosPage extends StatelessWidget {
     );
   }
 
-Widget _body(BuildContext context) {
-    
+  Widget _body(BuildContext context) {
     return Column(
       children: [
         Container(
@@ -29,7 +27,6 @@ Widget _body(BuildContext context) {
             style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
           ),
         ),
-        
         Expanded(
             child: Container(
           margin: EdgeInsets.all(25),
@@ -47,7 +44,11 @@ Widget _body(BuildContext context) {
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Text('Normal')
+                        Text(resultado['textoIMC'].toString().toUpperCase(),
+                            style: TextStyle(
+                                color: resultado['color'],
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold))
                       ]),
                 ),
                 Padding(
@@ -55,29 +56,39 @@ Widget _body(BuildContext context) {
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Text('22.5')
+                        Text(
+                          resultado['resultadoIMC'],
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 60,
+                              fontWeight: FontWeight.bold),
+                        )
                       ]),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 30),
+                 padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 15),
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                          Text('Tienes un peso corporal normal. ¡Buen trabajo!'),
-                        ]),
+                        Expanded(
+                            child: Padding(
+                          padding: const EdgeInsets.all(12.0),
+                          child: Text(resultado['mensajeIMC'],style:TextStyle()),
+                        )),
+                      ]),
                 ),
               ]),
             ),
           ]),
         )),
-
         GestureDetector(
           onTap: () {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => 
-                    HomePage(title: 'Calculadora IMC',)));
+                    builder: (context) => HomePage(
+                          title: 'Calculadora IMC',
+                        )));
           },
           child: Container(
               height: 80,
@@ -100,13 +111,4 @@ Widget _body(BuildContext context) {
       ],
     );
   }
-
-
-
-
-
-
-
-
-
 }

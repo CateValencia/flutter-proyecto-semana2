@@ -22,4 +22,4 @@ class MyApp extends StatelessWidget {
      home: HomePage(title: 'Cálculo del IMC'),
     );
   }
-} 
+}

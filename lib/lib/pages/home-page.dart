@@ -60,7 +60,10 @@ double _estatura = 166;
                                       height: 80),
                     ), Text("MUJER")
                   ])),
-          Padding(
+          
+          ],
+        ),
+        Padding(
           padding: const EdgeInsets.all(18.0),
           child: Expanded(
               child: Container(
@@ -93,16 +96,13 @@ double _estatura = 166;
                                   style: TextStyle(
                                       color: Colors.white30, fontSize: 20))
                             ]),
-                        Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              SliderTheme(
+                          SliderTheme(
                                 data: SliderThemeData(
                                     activeTrackColor: Colors.white,
-                                    thumbColor: Colors.pink,
+                                    thumbColor: Colors.pinkAccent[400],
                                     overlayColor: Colors.pink.withOpacity(0.2),
                                     inactiveTrackColor: Colors.white24,
-                                    valueIndicatorColor: Colors.pink),
+                                    valueIndicatorColor: Colors.pinkAccent[400]),
                                 child: Slider(
                                   value: _estatura,
                                   min: 100,
@@ -118,11 +118,8 @@ double _estatura = 166;
                                   },
                                 ),
                               )
-                            ])
                       ]))),
             ),
-          ],
-        ),
       ],
     );
   }

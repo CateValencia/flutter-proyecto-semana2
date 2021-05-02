@@ -28,7 +28,42 @@ class _HomePageState extends State<HomePage> {
   Widget _body() {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [],
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Container(
+                height: 160,
+                width: 160,
+                decoration: BoxDecoration(
+                  color: const Color(0xFF212122),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Column(
+                    children: [Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: new Image.asset("assets/male.png",
+                                      height: 80),
+                                    ), Text("HOMBRE")
+                    ])),
+            Container(
+                height: 160,
+                width: 160,
+                decoration: BoxDecoration(
+                  color: const Color(0xFF212122),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Column(
+                      children: [Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: new Image.asset("assets/female.png",
+                                      height: 80),
+                    ), Text("MUJER")
+                  ])),
+            
+          ],
+        ),
+      ],
     );
   }
 }

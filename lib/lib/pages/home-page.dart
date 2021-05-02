@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 
@@ -18,6 +19,51 @@ bool genero = false;
 String sexo = "";
 int codeColorFemenino =  0xFF3B3B3B;
 int codeColorMasculino = 0xFF3B3B3B;
+
+List<Map<String, dynamic>> clasificacionIMC = [
+    {
+      "textoIMC": "Bajo Peso",
+      "valorMinimoRango": 0,
+      "valorMaximoRango": 18.4,
+      "mensajeIMC": "Ten cuidado estás bajo de peso!, debes alimentarte bien!",
+      "color": Colors.orange[100],
+    },
+    {
+      "textoIMC": "Peso normal",
+      "valorMinimoRango": 18.5,
+      "valorMaximoRango": 24.9,
+      "mensaje": "Tienes un peso corporal normal. ¡Buen trabajo!",
+      "color": Colors.green[100],
+    },
+    {
+      "textoIMC": "Sobrepeso",
+      "valorMinimoRango": 25.0,
+      "valorMaximoRango": 29.9,
+      "mensajeIMC": "Estás muy cerca de tu peso ideal! Debes trabajar un poco más.",
+      "color": Colors.orange[100],
+    },
+    {
+      "textoIMC": "Obesidad Grado 1",
+      "valorMinimoRango": 30.0,
+      "valorMaximoRango": 34.5,
+      "mensajeIMC": "Ten cuidado con tu salud! Alimentate bien y realiza ejercicio.",
+      "color": Colors.orange[800],
+    },
+    {
+      "textoIMC": "Obesidad Grado 2",
+      "valorMinimoRango": 35.0,
+      "valorMaximoRango": 39.9,
+      "mensajeIMC": "Ten cuidado! Tu salud está en riesgo, acude al nutricionista.",
+      "color": Colors.orange[900],
+    },
+    {
+      "textoIMC": "Obesidad Grado 3",
+      "valorMinimoRango": 40.0,
+      "valorMaximoRango": 100.1,
+      "mensajeIMC": "¡Atención! Necesitas mejorar tu alimentación y más ejercicio, debes bajar de peso y acudir con tu nutricionista.",
+      "color": Colors.red[900],
+    },
+  ];
 
 void _aumentaEdad() {
     setState(() {
@@ -66,7 +112,7 @@ void _aumentaEdad() {
                 child: ElevatedButton( 
                 onPressed: () {
                       setState(() {
-                       sexo = "Hombre";
+                      sexo = "Hombre";
                       codeColorFemenino = 0xFF3B3B3B;
                       codeColorMasculino = 0xFF3B3B3B; 
                       genero = false;
@@ -77,7 +123,7 @@ void _aumentaEdad() {
                       padding: const EdgeInsets.all(10.0),
                       child: new Image.asset("assets/male.png",
                                       height: 80),
-                                    ), Text("HOMBRE")
+                                    ), Text("Hombre")
                     ])),
                     ),
               Container(
@@ -93,7 +139,7 @@ void _aumentaEdad() {
                       padding: const EdgeInsets.all(10.0),
                       child: new Image.asset("assets/female.png",
                                       height: 80),
-                    ), Text("MUJER")
+                    ), Text("Mujer")
                   ])),
           
           ],

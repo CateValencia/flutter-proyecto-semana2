@@ -14,6 +14,10 @@ class _HomePageState extends State<HomePage> {
 double _estatura = 150;
 int peso = 50;
 int edad = 18;  
+bool genero = false;
+String sexo = "";
+int codeColorFemenino =  0xFF3B3B3B;
+int codeColorMasculino = 0xFF3B3B3B;
 
 void _aumentaEdad() {
     setState(() {
@@ -59,24 +63,31 @@ void _aumentaEdad() {
             Container(
                 height: 160,
                 width: 160,
-                decoration: BoxDecoration(
-                  color: const Color(0xFF1c1d32),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Column(
-                    children: [Padding(
+                child: ElevatedButton( 
+                onPressed: () {
+                      setState(() {
+                       sexo = "Hombre";
+                      codeColorFemenino = 0xFF3B3B3B;
+                      codeColorMasculino = 0xFF3B3B3B; 
+                      genero = false;
+                      });
+                    },
+                  child: Column(
+                      children: [Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: new Image.asset("assets/male.png",
                                       height: 80),
                                     ), Text("HOMBRE")
                     ])),
-            Container(
+                    ),
+              Container(
                 height: 160,
                 width: 160,
                 decoration: BoxDecoration(
                   color: const Color(0xFF1c1d32),
                   borderRadius: BorderRadius.circular(10),
                 ),
+                
                 child: Column(
                       children: [Padding(
                       padding: const EdgeInsets.all(10.0),

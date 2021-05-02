@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:imc/pages/home-page.dart';
+import 'package:imc/lib/pages/home-page.dart';
+
+
 
 void main() {
   runApp(MyApp());
@@ -15,9 +17,9 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.dark,
         primaryColor: Colors.black,
         accentColor: Colors.white24,
-        canvasColor: Color(0x93090E21),
+        canvasColor: Colors.black,
       ),
-      home: HomePage(),
+     home: HomePage(title: 'Cálculo del IMC'),
     );
   }
 } 

@@ -28,15 +28,15 @@ class _HomePageState extends State<HomePage> {
       "valorMinimoRango": 0,
       "valorMaximoRango": 18.4,
       "mensajeIMC": "Ten cuidado estás bajo de peso!, debes alimentarte bien!",
-      "color": Colors.orange[100],
+      "color": Colors.orange[700],
     });
 
     clasificacionIMC.add({
-      "textoIMC": "Peso normal",
+      "textoIMC": "Normal",
       "valorMinimoRango": 18.5,
       "valorMaximoRango": 24.9,
       "mensajeIMC": "Tienes un peso corporal normal. ¡Buen trabajo!",
-      "color": Colors.green[100],
+      "color": Colors.green[700],
     });
 
     clasificacionIMC.add({
@@ -45,20 +45,20 @@ class _HomePageState extends State<HomePage> {
       "valorMaximoRango": 29.9,
       "mensajeIMC":
           "Estás muy cerca de tu peso ideal! Debes trabajar un poco más.",
-      "color": Colors.orange[100],
+      "color": Colors.orange,
     });
 
     clasificacionIMC.addAll([
       {
-        "textoIMC": "Obesidad Grado 1",
+        "textoIMC": "Obesidad Grado I",
         "valorMinimoRango": 30.0,
         "valorMaximoRango": 34.5,
         "mensajeIMC":
             "Ten cuidado con tu salud! Alimentate bien y realiza ejercicio.",
-        "color": Colors.orange[800],
+        "color": Colors.orange[700],
       },
       {
-        "textoIMC": "Obesidad Grado 2",
+        "textoIMC": "Obesidad Grado II",
         "valorMinimoRango": 35.0,
         "valorMaximoRango": 39.9,
         "mensajeIMC":
@@ -66,7 +66,7 @@ class _HomePageState extends State<HomePage> {
         "color": Colors.orange[900],
       },
       {
-        "textoIMC": "Obesidad Grado 3",
+        "textoIMC": "Obesidad Grado III",
         "valorMinimoRango": 40.0,
         "valorMaximoRango": 100.1,
         "mensajeIMC":
@@ -204,9 +204,9 @@ class _HomePageState extends State<HomePage> {
             child: Slider(
               value: _estatura,
               min: 100,
-              max: 200,
+              max: 300,
               divisions: 100,
-              label: _estatura.round().toString() + " cm",
+              label: _estatura.round().toString() + "  cm",
               onChanged: (double value) {
                 setState(() {
                   _estatura = value;

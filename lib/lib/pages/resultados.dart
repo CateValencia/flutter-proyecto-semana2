@@ -66,14 +66,19 @@ class ResultadosPage extends StatelessWidget {
                       ]),
                 ),
                 Padding(
-                 padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 15),
+                 padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 25),
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Expanded(
                             child: Padding(
                           padding: const EdgeInsets.all(12.0),
-                          child: Text(resultado['mensajeIMC'],style:TextStyle()),
+                          child: Text(
+                          resultado['mensajeIMC'],
+                          style:TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w500)),
                         )),
                       ]),
                 ),

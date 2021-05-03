@@ -60,7 +60,7 @@ class ResultadosPage extends StatelessWidget {
                           resultado['resultadoIMC'],
                           style: TextStyle(
                               color: Colors.white,
-                              fontSize: 60,
+                              fontSize: 85,
                               fontWeight: FontWeight.bold),
                         )
                       ]),
@@ -97,7 +97,7 @@ class ResultadosPage extends StatelessWidget {
           },
           child: Container(
               height: 80,
-              color: Colors.pink,
+              color: Colors.pinkAccent[400],
               child: Column(children: [
                 Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -107,7 +107,7 @@ class ResultadosPage extends StatelessWidget {
                         child: Text(
                           "Calcular",
                           style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 22),
+                              fontWeight: FontWeight.bold, fontSize: 30),
                         ),
                       ),
                     ])

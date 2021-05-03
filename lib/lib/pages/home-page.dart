@@ -25,24 +25,24 @@ class _HomePageState extends State<HomePage> {
   _HomePageState() {
     clasificacionIMC.add({
       "textoIMC": "Bajo Peso",
-      "valorMinimoRango": 0,
-      "valorMaximoRango": 18.4,
+      "rangoMinimo": 0,
+      "rangoMaximo": 18.4,
       "mensajeIMC": "Ten cuidado estás bajo de peso!, debes alimentarte bien!",
       "color": Colors.orange[700],
     });
 
     clasificacionIMC.add({
       "textoIMC": "Normal",
-      "valorMinimoRango": 18.5,
-      "valorMaximoRango": 24.9,
+      "rangoMinimo": 18.5,
+      "rangoMaximo": 24.9,
       "mensajeIMC": "Tienes un peso corporal normal. ¡Buen trabajo!",
       "color": Colors.green[700],
     });
 
     clasificacionIMC.add({
       "textoIMC": "Sobrepeso",
-      "valorMinimoRango": 25.0,
-      "valorMaximoRango": 29.9,
+      "rangoMinimo": 25.0,
+      "rangoMaximo": 29.9,
       "mensajeIMC":
           "Estás muy cerca de tu peso ideal! Debes trabajar un poco más.",
       "color": Colors.orange,
@@ -51,24 +51,24 @@ class _HomePageState extends State<HomePage> {
     clasificacionIMC.addAll([
       {
         "textoIMC": "Obesidad Grado I",
-        "valorMinimoRango": 30.0,
-        "valorMaximoRango": 34.5,
+        "rangoMinimo": 30.0,
+        "rangoMaximo": 34.5,
         "mensajeIMC":
             "Ten cuidado con tu salud! Alimentate bien y realiza ejercicio.",
         "color": Colors.orange[700],
       },
       {
         "textoIMC": "Obesidad Grado II",
-        "valorMinimoRango": 35.0,
-        "valorMaximoRango": 39.9,
+        "rangoMinimo": 35.0,
+        "rangoMaximo": 39.9,
         "mensajeIMC":
             "Ten cuidado! Tu salud está en riesgo, acude al nutricionista.",
         "color": Colors.orange[900],
       },
       {
         "textoIMC": "Obesidad Grado III",
-        "valorMinimoRango": 40.0,
-        "valorMaximoRango": 100.1,
+        "rangoMinimo": 40.0,
+        "rangoMaximo": 100.1,
         "mensajeIMC":
             "¡Atención! Necesitas mejorar tu alimentación y más ejercicio, debes bajar de peso y acudir con tu nutricionista.",
         "color": Colors.red[900],
@@ -105,8 +105,8 @@ class _HomePageState extends State<HomePage> {
     var resultado;
 
     clasificacionIMC.forEach((claseimc) {
-      double min = claseimc['valorMinimoRango'];
-      double max = claseimc['valorMaximoRango'];
+      double min = claseimc['rangoMinimo'];
+      double max = claseimc['rangoMaximo'];
       if (min <= resultadoIMC && max >= resultadoIMC) {
         resultado = {
           "resultadoIMC": resultadoIMC.toStringAsFixed(1).toString(),
@@ -138,18 +138,24 @@ class _HomePageState extends State<HomePage> {
           Container(
             height: 160,
             width: 160,
+            
             child: ElevatedButton(
-                onPressed: () {
+                style: ElevatedButton.styleFrom(
+                primary: const Color(0xFF1c1d32), // background
+                onPrimary: Colors.white,),// foreground
+                               onPressed: () {
+                  
                   setState(() {
                     sexo = "Hombre";
-                    codeColorFemenino = 0xFF3B3B3B;
-                    codeColorMasculino = 0xFF3B3B3B;
-                    genero = false;
+                   // codeColorFemenino = 0xFF3B3B3B;
+                   // codeColorMasculino = 0xFF3B3B3B;
+                    genero = true;
                   });
+                  
                 },
                 child: Column(children: [
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
+                    Padding(
+                    padding: const EdgeInsets.all(10.50),
                     child: new Image.asset("assets/male.png", height: 80),
                   ),
                   Text("Hombre")
@@ -158,10 +164,22 @@ class _HomePageState extends State<HomePage> {
           Container(
               height: 160,
               width: 160,
-              decoration: BoxDecoration(
-                color: const Color(0xFF1c1d32),
-                borderRadius: BorderRadius.circular(10),
-              ),
+              //decoration: BoxDecoration(
+              // color: const Color(0xFF1c1d32),
+              //  borderRadius: BorderRadius.circular(10),
+              //),
+              child: ElevatedButton(
+                 style: ElevatedButton.styleFrom(
+                  primary: const Color(0xFF1c1d32), // background
+                  onPrimary: Colors.white,),// foreground
+                 onPressed: () {
+                  setState(() {
+                    sexo = "Hombre";
+                   // codeColorFemenino = 0xFF3B3B3B;
+                   // codeColorMasculino = 0xFF3B3B3B;
+                    genero = true;
+                  });
+                 },
               child: Column(children: [
                 Padding(
                   padding: const EdgeInsets.all(10.0),
@@ -169,6 +187,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Text("Mujer")
               ])),
+           ),
         ],
       ),
       Expanded(

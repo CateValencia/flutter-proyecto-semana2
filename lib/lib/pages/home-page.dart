@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'resultados.dart';
 
@@ -17,8 +16,6 @@ class _HomePageState extends State<HomePage> {
   int edad = 38;
   bool genero = false;
   String sexo = "";
-  int codeColorFemenino = 0xFF3B3B3B;
-  int codeColorMasculino = 0xFF3B3B3B;
 
   List<Map<String, dynamic>> clasificacionIMC = [];
 
@@ -138,23 +135,19 @@ class _HomePageState extends State<HomePage> {
           Container(
             height: 160,
             width: 160,
-            
             child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                primary: const Color(0xFF1c1d32), // background
-                onPrimary: Colors.white,),// foreground
-                               onPressed: () {
-                  
+                  primary: const Color(0xFF1c1d32), // background
+                  onPrimary: Colors.white,
+                ), // foreground
+                onPressed: () {
                   setState(() {
                     sexo = "Hombre";
-                   // codeColorFemenino = 0xFF3B3B3B;
-                   // codeColorMasculino = 0xFF3B3B3B;
                     genero = true;
                   });
-                  
                 },
                 child: Column(children: [
-                    Padding(
+                  Padding(
                     padding: const EdgeInsets.all(10.50),
                     child: new Image.asset("assets/male.png", height: 80),
                   ),
@@ -162,42 +155,37 @@ class _HomePageState extends State<HomePage> {
                 ])),
           ),
           Container(
-              height: 160,
-              width: 160,
-              //decoration: BoxDecoration(
-              // color: const Color(0xFF1c1d32),
-              //  borderRadius: BorderRadius.circular(10),
-              //),
-              child: ElevatedButton(
-                 style: ElevatedButton.styleFrom(
+            height: 160,
+            width: 160,
+            child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
                   primary: const Color(0xFF1c1d32), // background
-                  onPrimary: Colors.white,),// foreground
-                 onPressed: () {
+                  onPrimary: Colors.white,
+                ), // foreground
+                onPressed: () {
                   setState(() {
                     sexo = "Hombre";
-                   // codeColorFemenino = 0xFF3B3B3B;
-                   // codeColorMasculino = 0xFF3B3B3B;
                     genero = true;
                   });
-                 },
-              child: Column(children: [
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: new Image.asset("assets/female.png", height: 80),
-                ),
-                Text("Mujer")
-              ])),
-           ),
+                },
+                child: Column(children: [
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: new Image.asset("assets/female.png", height: 80),
+                  ),
+                  Text("Mujer")
+                ])),
+          )
         ],
       ),
       Expanded(
           child: Container(
-        margin: EdgeInsets.all(15),
+        height: 50,
+        margin: EdgeInsets.all(30),
         decoration: BoxDecoration(
           color: const Color(0xFF1c1d32),
           borderRadius: BorderRadius.circular(10),
         ),
-        height: 160,
         child:
             Column(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
           Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [

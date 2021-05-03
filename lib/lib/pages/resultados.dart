@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'home-page.dart';
 
+// ignore: must_be_immutable
 class ResultadosPage extends StatelessWidget {
   var resultado;
 
@@ -28,64 +29,65 @@ class ResultadosPage extends StatelessWidget {
           ),
         ),
         Expanded(
-            child: Container(
-          margin: EdgeInsets.all(25),
-          decoration: BoxDecoration(
-            color: const Color(0xFF1c1d32),
-            borderRadius: BorderRadius.circular(10),
-          ),
-          height: 160,
-          child: Column(children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 30),
-              child: Column(children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 30),
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Text(resultado['textoIMC'].toString().toUpperCase(),
-                            style: TextStyle(
-                                color: resultado['color'],
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold))
-                      ]),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 50),
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Text(
-                          resultado['resultadoIMC'],
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 85,
-                              fontWeight: FontWeight.bold),
-                        )
-                      ]),
-                ),
-                Padding(
-                 padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 25),
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Expanded(
-                            child: Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Text(
-                          resultado['mensajeIMC'],
-                          style:TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500)),
-                        )),
-                      ]),
-                ),
-              ]),
+          child: Container(
+            margin: EdgeInsets.all(25),
+            decoration: BoxDecoration(
+              color: const Color(0xFF1c1d32),
+              borderRadius: BorderRadius.circular(10),
             ),
-          ]),
-        )),
+            height: 160,
+            child: Column(children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 30),
+                child: Column(children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 30),
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Text(resultado['textoIMC'].toString().toUpperCase(),
+                              style: TextStyle(
+                                  color: resultado['color'],
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold))
+                        ]),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 50),
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Text(
+                            resultado['resultadoIMC'],
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 85,
+                                fontWeight: FontWeight.bold),
+                          )
+                        ]),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 10, horizontal: 25),
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Expanded(
+                              child: Padding(
+                            padding: const EdgeInsets.all(12.0),
+                            child: Text(resultado['mensajeIMC'],
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w500)),
+                          )),
+                        ]),
+                  ),
+                ]),
+              ),
+            ]),
+          ),
+        ),
         GestureDetector(
           onTap: () {
             Navigator.push(
